@@ -154,7 +154,7 @@ def test_proof_request_from_to_dict():
         'version': '1.0',
         'nonce': '1',
         'requested_attrs': {'attr_uuid': {'name': 'name', 'schema_seq_no': None, 'issuer_did': None}},
-        'requested_predicates': {'predicate_uuid': {'p_type': 'ge', 'value': 18, 'attr_name': 'age', 'schema_seq_no': None,
+        'requested_predicates': {'predicate_uuid': {'p_type': 'GE', 'value': 18, 'attr_name': 'age', 'schema_seq_no': None,
                                           'issuer_did': None}}
     }
     assert proofRequest.to_str_dict() == proof_input_serialized
@@ -250,7 +250,7 @@ async def test_ge_proof_from_to_dict():
         'r': {'1': '13'},
         'u': {'1': '42'},
         'predicate': {
-            'p_type': 'ge',
+            'p_type': 'GE',
             'attr_name': 'age',
             'value': 18,
             'schema_seq_no': None,
@@ -295,7 +295,7 @@ async def test_primary_proof_from_to_dict():
                 'r': {'1': '13'},
                 'u': {'1': '42'},
                 'predicate': {
-                    'p_type': 'ge',
+                    'p_type': 'GE',
                     'attr_name': 'age',
                     'value': 18,
                     'schema_seq_no': None,
@@ -348,7 +348,7 @@ async def test_proof_info_from_to_dict():
                         'r': {'1': '13'},
                         'u': {'1': '42'},
                         'predicate': {
-                            'p_type': 'ge',
+                            'p_type': 'GE',
                             'attr_name': 'age',
                             'value': 18,
                             'schema_seq_no': None,
