@@ -824,7 +824,7 @@ AvailableClaim = NamedTuple("AvailableClaim", [("name", str),
 
 
 class ProofRequest:
-    def __init__(self, name, version, nonce, attributes=[], verifiableAttributes=[], predicates=[]):
+    def __init__(self, name, version, nonce, attributes={}, verifiableAttributes={}, predicates={}):
         self.name = name
         self.version = version
         self.nonce = nonce
@@ -850,7 +850,7 @@ class ProofRequest:
             "version": self.version,
             "nonce": self.nonce,
             "attributes": self.attributes,
-            "requested_attrs": self.verifiableAttributes
+            "verifiableAttributes": self.verifiableAttributes
         }
 
     def to_str_dict(self):
@@ -878,7 +878,7 @@ class ProofRequest:
             'Attributes:' + '\n    ' + \
             format("\n    ".join(
                 ['{}: {}'.format(k, v)
-                 for k, v in self.attributes])) + '\n'
+                 for k, v in self.attributes.items()])) + '\n'
 
     @property
     def verifiableClaimAttributeValues(self):
