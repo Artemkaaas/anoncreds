@@ -867,7 +867,7 @@ class ProofRequest:
         return ProofRequest(name=d['name'],
                             version=d['version'],
                             nonce=int(d['nonce']),
-                            attributes=d['attributes'] if 'attributes' in d else [],
+                            attributes=d['attributes'] if 'attributes' in d else {},
                             verifiableAttributes={k: AttributeInfo.from_str_dict(v) for k, v in
                                                   d['requested_attrs'].items()},
                             predicates={k: PredicateGE.from_str_dict(v) for k, v in d['requested_predicates'].items()})
